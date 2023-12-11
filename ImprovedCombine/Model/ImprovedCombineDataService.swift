@@ -13,18 +13,19 @@ import Combine
 class ImprovedCombineDataService {
     
     //@Published var basicPublisher: String = "first publish"
-    let currentValuePublisher = CurrentValueSubject<String, Never>("first publish")
+    //let currentValuePublisher = CurrentValueSubject<Int, Error>("first publish")
+    let passThroughpublisher = PassthroughSubject<Int, Error>()
     
     init() {
         publishFakeData()
     }
     
     func publishFakeData() {
-        let items = ["white", "black", "blue"]
+        let items: [Int] = Array(0..<11)
         
         for x in items.indices {
             DispatchQueue.main.asyncAfter(deadline: .now() + Double(x)) {
-                self.currentValuePublisher.send(items[x])
+                self.passThroughpublisher.send(items[x])
             }
         }
     }

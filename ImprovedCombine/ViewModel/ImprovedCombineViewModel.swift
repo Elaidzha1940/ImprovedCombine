@@ -21,7 +21,12 @@ class ImprovedCombineViewModel: ObservableObject {
     }
     
     private func addSubscribers() {
-        dataService.currentValuePublisher
+        dataService.passThroughpublisher
+        
+        // Sequence Operations
+            .first()
+        
+            .map({ String($0) })
             .sink { completion in
                 switch completion {
                 case .finished:
