@@ -21,6 +21,10 @@ struct ImprovedCombineView: View {
                     Text($0)
                         .font(.system(size: 25, weight: .black, design: .rounded))
                 }
+                
+                if !vm.error.isEmpty {
+                    Text(vm.error)
+                }
             }
         }
     }

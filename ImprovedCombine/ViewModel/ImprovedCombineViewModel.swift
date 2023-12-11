@@ -12,6 +12,7 @@ import Combine
 
 class ImprovedCombineViewModel: ObservableObject {
     @Published var data: [String] = []
+    @Published var error: String = ""
     let dataService = ImprovedCombineDataService()
     
     var cancellables = Set<AnyCancellable>()
@@ -24,7 +25,18 @@ class ImprovedCombineViewModel: ObservableObject {
         dataService.passThroughpublisher
         
         // Sequence Operations
-            .first()
+        
+        //.first()
+        //.first(where: { int in
+        // return int > 5
+        // })
+        //.first(where: { $0 > 5 })
+            .tryFirst(where: { int in
+                if int == 3 {
+                    throw URLError(.badServerResponse)
+                }
+                return int > 5
+            })
         
             .map({ String($0) })
             .sink { completion in
@@ -32,7 +44,8 @@ class ImprovedCombineViewModel: ObservableObject {
                 case .finished:
                     break
                 case .failure(let error):
-                    print("ERROR \(error.localizedDescription)")
+                    self.error = "ERROR \(error.localizedDescription)"
+                    //print()
                 }
             } receiveValue: { [weak self] returnedValue in
                 self?.data.append(returnedValue)
