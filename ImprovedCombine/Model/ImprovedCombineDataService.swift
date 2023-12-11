@@ -26,6 +26,10 @@ class ImprovedCombineDataService {
         for x in items.indices {
             DispatchQueue.main.asyncAfter(deadline: .now() + Double(x)) {
                 self.passThroughpublisher.send(items[x])
+                
+                if x == items.indices.last {
+                    self.passThroughpublisher.send(completion: .finished/*.failure(Error)*/)
+                }
             }
         }
     }

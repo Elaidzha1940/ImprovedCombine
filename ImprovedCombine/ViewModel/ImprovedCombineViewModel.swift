@@ -31,11 +31,19 @@ class ImprovedCombineViewModel: ObservableObject {
         // return int > 5
         // })
         //.first(where: { $0 > 5 })
-            .tryFirst(where: { int in
-                if int == 3 {
+        //.tryFirst(where: { int in
+        // if int == 3 {
+        // throw URLError(.badServerResponse)
+        // }
+        // return int > 1
+        // })
+        //.last()
+        //.last(where: { $0 < 3 })
+            .tryLast(where: { int in
+                if int == 15 {
                     throw URLError(.badServerResponse)
                 }
-                return int > 5
+                return int > 1
             })
         
             .map({ String($0) })
@@ -44,7 +52,7 @@ class ImprovedCombineViewModel: ObservableObject {
                 case .finished:
                     break
                 case .failure(let error):
-                    self.error = "ERROR \(error.localizedDescription)"
+                    self.error = "ERROR \(error)"
                     //print()
                 }
             } receiveValue: { [weak self] returnedValue in
