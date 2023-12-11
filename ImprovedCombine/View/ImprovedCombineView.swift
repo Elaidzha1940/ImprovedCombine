@@ -15,9 +15,14 @@ struct ImprovedCombineView: View {
     
     var body: some View {
         
-        VStack {
-            
-         Text("Hoo")
+        ScrollView {
+            VStack {
+                ForEach(vm.data, id: \.self) {
+                    Text($0)
+                        .font(.system(size: 25, weight: .black, design: .rounded))
+                }
+                
+            }
         }
     }
 }

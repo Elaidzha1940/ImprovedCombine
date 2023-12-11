@@ -30,7 +30,7 @@ class ImprovedCombineViewModel: ObservableObject {
                     print("ERROR \(error.localizedDescription)")
                 }
             } receiveValue: { [weak self] returnedValue in
-                self?.data = returnedValue
+                self?.data.append(returnedValue)
             }
             .store(in: &cancellables)
         

@@ -11,15 +11,19 @@ import Foundation
 
 class ImprovedCombineDataService {
     
-    @Published var basicPublisher: [String] = []
+    @Published var basicPublisher: String = ""
     
     init() {
         publishFakeData()
     }
     
     func publishFakeData() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.basicPublisher = ["white", "black", "blue"]
+        let items = ["white", "black", "blue"]
+        
+        for x in items.indices {
+            DispatchQueue.main.asyncAfter(deadline: .now() + Double(x)) {
+                self.basicPublisher = items[x]
+            }
         }
     }
 }
