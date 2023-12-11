@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		E479FB422B27436800A4EEDB /* ImprovedCombineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E479FB412B27436800A4EEDB /* ImprovedCombineApp.swift */; };
-		E479FB442B27436800A4EEDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E479FB432B27436800A4EEDB /* ContentView.swift */; };
+		E479FB442B27436800A4EEDB /* ImprovedCombineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E479FB432B27436800A4EEDB /* ImprovedCombineView.swift */; };
 		E479FB462B27436900A4EEDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E479FB452B27436900A4EEDB /* Assets.xcassets */; };
 		E479FB492B27436900A4EEDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E479FB482B27436900A4EEDB /* Preview Assets.xcassets */; };
+		E479FB522B27449900A4EEDB /* ImprovedCombineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E479FB512B27449900A4EEDB /* ImprovedCombineViewModel.swift */; };
+		E479FB542B27451000A4EEDB /* ImprovedCombineDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E479FB532B27451000A4EEDB /* ImprovedCombineDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E479FB3E2B27436800A4EEDB /* ImprovedCombine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImprovedCombine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E479FB412B27436800A4EEDB /* ImprovedCombineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprovedCombineApp.swift; sourceTree = "<group>"; };
-		E479FB432B27436800A4EEDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E479FB432B27436800A4EEDB /* ImprovedCombineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprovedCombineView.swift; sourceTree = "<group>"; };
 		E479FB452B27436900A4EEDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E479FB482B27436900A4EEDB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E479FB512B27449900A4EEDB /* ImprovedCombineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprovedCombineViewModel.swift; sourceTree = "<group>"; };
+		E479FB532B27451000A4EEDB /* ImprovedCombineDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImprovedCombineDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				E479FB412B27436800A4EEDB /* ImprovedCombineApp.swift */,
-				E479FB432B27436800A4EEDB /* ContentView.swift */,
+				E479FB572B27454E00A4EEDB /* Model */,
+				E479FB562B27454500A4EEDB /* ViewModel */,
+				E479FB552B27452600A4EEDB /* View */,
 				E479FB452B27436900A4EEDB /* Assets.xcassets */,
 				E479FB472B27436900A4EEDB /* Preview Content */,
 			);
@@ -65,6 +71,30 @@
 				E479FB482B27436900A4EEDB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E479FB552B27452600A4EEDB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E479FB432B27436800A4EEDB /* ImprovedCombineView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E479FB562B27454500A4EEDB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E479FB512B27449900A4EEDB /* ImprovedCombineViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E479FB572B27454E00A4EEDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E479FB532B27451000A4EEDB /* ImprovedCombineDataService.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E479FB442B27436800A4EEDB /* ContentView.swift in Sources */,
+				E479FB522B27449900A4EEDB /* ImprovedCombineViewModel.swift in Sources */,
+				E479FB442B27436800A4EEDB /* ImprovedCombineView.swift in Sources */,
+				E479FB542B27451000A4EEDB /* ImprovedCombineDataService.swift in Sources */,
 				E479FB422B27436800A4EEDB /* ImprovedCombineApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,15 +9,18 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ImprovedCombineView: View {
+    @StateObject private var vm = ImprovedCombineViewModel()
+    
     var body: some View {
         
         VStack {
-         
+            
+         Text("Hoo")
         }
     }
 }
 
 #Preview {
-    ContentView()
+    ImprovedCombineView()
 }

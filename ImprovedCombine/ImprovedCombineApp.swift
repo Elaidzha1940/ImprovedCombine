@@ -13,7 +13,7 @@ import SwiftUI
 struct ImprovedCombineApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ImprovedCombineView()
         }
     }
 }
