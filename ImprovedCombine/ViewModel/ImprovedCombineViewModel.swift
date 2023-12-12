@@ -39,13 +39,13 @@ class ImprovedCombineViewModel: ObservableObject {
         // })
         //.last()
         //.last(where: { $0 < 3 })
-            .tryLast(where: { int in
-                if int == 15 {
-                    throw URLError(.badServerResponse)
-                }
-                return int > 1
-            })
-        
+        //.tryLast(where: { int in
+        // if int == 15 {
+        // throw URLError(.badServerResponse)
+        // }
+        // return int > 1
+        // })
+            .dropFirst()
             .map({ String($0) })
             .sink { completion in
                 switch completion {
