@@ -135,6 +135,11 @@ class ImprovedCombineViewModel: ObservableObject {
             // .timeout(0.75, scheduler: DispatchQueue.main)
          
         */
+        
+        // Multiple Publisher / Subscribers
+        
+            .combineLatest(<#T##other: Publisher##Publisher#>)
+        
             .map({ String($0) })
             .sink { completion in
                 switch completion {
@@ -142,7 +147,6 @@ class ImprovedCombineViewModel: ObservableObject {
                     break
                 case .failure(let error):
                     self.error = "ERROR \(error)"
-                    //print()
                 }
             } receiveValue: { [weak self] returnedValue in
                 //self?.data = returnedValue

@@ -15,6 +15,7 @@ class ImprovedCombineDataService {
     //@Published var basicPublisher: String = "first publish"
     //let currentValuePublisher = CurrentValueSubject<Int, Error>("first publish")
     let passThroughpublisher = PassthroughSubject<Int, Error>()
+    let boolPublisher = PassthroughSubject<Bool, Error>()
     
     init() {
         publishFakeData()
@@ -27,6 +28,12 @@ class ImprovedCombineDataService {
         for x in items.indices {
             DispatchQueue.main.asyncAfter(deadline: .now() + Double(x)) {
                 self.passThroughpublisher.send(items[x])
+                
+                if (x > 3 && x < 6) {
+                    self.boolPublisher.send(true)
+                } else {
+                    self.boolPublisher.send(false)
+                }
                 
                 if x == items.indices.last {
                     self.passThroughpublisher.send(completion: .finished/*.failure(Error)*/)
