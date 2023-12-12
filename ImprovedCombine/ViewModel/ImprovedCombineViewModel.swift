@@ -138,9 +138,17 @@ class ImprovedCombineViewModel: ObservableObject {
         
         // Multiple Publisher / Subscribers
         
-            .combineLatest(<#T##other: Publisher##Publisher#>)
+            .combineLatest(dataService.boolPublisher)
+            // .compactMap({ (int, bool) in
+            // if bool {
+            // return String(int)
+            // }
+            // return nil
+            // })
+            .compactMap({ $1 ? String($0) : "n/a" })
+            //.removeDuplicates()
         
-            .map({ String($0) })
+            //.map({ String($0) })
             .sink { completion in
                 switch completion {
                 case .finished:

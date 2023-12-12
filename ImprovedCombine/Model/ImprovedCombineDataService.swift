@@ -16,6 +16,7 @@ class ImprovedCombineDataService {
     //let currentValuePublisher = CurrentValueSubject<Int, Error>("first publish")
     let passThroughpublisher = PassthroughSubject<Int, Error>()
     let boolPublisher = PassthroughSubject<Bool, Error>()
+    let intPublisher = PassthroughSubject<Int, Error>()
     
     init() {
         publishFakeData()
@@ -31,6 +32,7 @@ class ImprovedCombineDataService {
                 
                 if (x > 3 && x < 6) {
                     self.boolPublisher.send(true)
+                    self.intPublisher
                 } else {
                     self.boolPublisher.send(false)
                 }
