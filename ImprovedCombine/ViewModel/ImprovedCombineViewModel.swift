@@ -117,14 +117,24 @@ class ImprovedCombineViewModel: ObservableObject {
         // .collect()
         // .collect(2)
         // .tryAllSatisfy(throw, and error)
-        
+        // .allSatisfy({ $0 < 12 })
+
         */
         
         // Timing Operations
-        
-            .debounce(for: 1, scheduler: DispatchQueue.main)
-        
-            .allSatisfy({ $0 < 12 })
+        /*
+         
+            // .debounce(for: 0.75, scheduler: DispatchQueue.main)
+            // .delay(for: 2, scheduler: DispatchQueue.main)
+            // .measureInterval(using: DispatchQueue.main)
+            // .map({ stride in
+            // return "\(stride.timeInterval)"
+            // })
+            // .throttle(for: 10, scheduler: DispatchQueue.main, latest: true)
+            //.retry(2)
+            // .timeout(0.75, scheduler: DispatchQueue.main)
+         
+        */
             .map({ String($0) })
             .sink { completion in
                 switch completion {
