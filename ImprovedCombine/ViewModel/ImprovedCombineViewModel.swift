@@ -77,7 +77,33 @@ class ImprovedCombineViewModel: ObservableObject {
          
          */
         
+        // Filter / Reducing Operations
         
+            // .map({ String($0) })
+            // .tryMap({ int in
+            // if int == 5 {
+            // throw URLError(.badServerResponse)
+            // }
+            // return String(int)
+            // })
+            // .compactMap({ int in
+            // if int == 5 {
+            // return nil
+            // }
+            // return  "\(int)" //String(int)
+            // })
+            // .tryCompactMap()
+            // .filter({ ($0 > 5) && ($0 < 7)})
+            // .tryFilter()
+            // .removeDuplicates()
+            // .removeDuplicates(by: { int1, int2 in
+            // return int1 = int2
+            // }
+            // .tryRemoveDuplicates(by: )
+            // .replaceNil(with: 3)
+            // .replaceEmpty(with: [])
+            // .replaceError(with: "Default Value")
+            .scan(<#T##initialResult: T##T#>, <#T##nextPartialResult: (T, Int) -> T##(T, Int) -> T#>)
         
             .map({ String($0) })
             .sink { completion in
