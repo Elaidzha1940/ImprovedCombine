@@ -103,7 +103,10 @@ class ImprovedCombineViewModel: ObservableObject {
             // .replaceNil(with: 3)
             // .replaceEmpty(with: [])
             // .replaceError(with: "Default Value")
-            .scan(<#T##initialResult: T##T#>, <#T##nextPartialResult: (T, Int) -> T##(T, Int) -> T#>)
+            // .scan(1, { existinfValue, newValue in
+            // return existinfValue + newValue
+            // })
+            .scan(0, { $0 + $1})
         
             .map({ String($0) })
             .sink { completion in
