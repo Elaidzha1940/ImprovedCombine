@@ -21,7 +21,8 @@ class ImprovedCombineDataService {
     }
     
     func publishFakeData() {
-        let items: [Int] = Array(1..<11)
+        //let items: [Int] = Array(1..<11)
+        let items: [Int] = [1,2,3,4,5,6,7,8,9,10]
         
         for x in items.indices {
             DispatchQueue.main.asyncAfter(deadline: .now() + Double(x)) {
