@@ -120,6 +120,9 @@ class ImprovedCombineViewModel: ObservableObject {
         
         */
         
+        // Timing Operations
+        
+            .debounce(for: 1, scheduler: DispatchQueue.main)
         
             .allSatisfy({ $0 < 12 })
             .map({ String($0) })

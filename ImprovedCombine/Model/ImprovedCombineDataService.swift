@@ -24,14 +24,27 @@ class ImprovedCombineDataService {
         //let items: [Int] = Array(1..<11)
         let items: [Int] = [1,2,3,4,5,6,7,8,9,10]
         
-        for x in items.indices {
-            DispatchQueue.main.asyncAfter(deadline: .now() + Double(x)) {
-                self.passThroughpublisher.send(items[x])
-                
-                if x == items.indices.last {
-                    self.passThroughpublisher.send(completion: .finished/*.failure(Error)*/)
-                }
-            }
+//        for x in items.indices {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + Double(x)) {
+//                self.passThroughpublisher.send(items[x])
+//                
+//                if x == items.indices.last {
+//                    self.passThroughpublisher.send(completion: .finished/*.failure(Error)*/)
+//                }
+//            }
+//        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+            self.passThroughpublisher.send(1)
         }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.passThroughpublisher.send(2)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.passThroughpublisher.send(3)
+        }
+
     }
 }
