@@ -32,7 +32,7 @@ class ImprovedCombineDataService {
                 
                 if (x > 3 && x < 6) {
                     self.boolPublisher.send(true)
-                    self.intPublisher
+                    self.intPublisher.send(99)
                 } else {
                     self.boolPublisher.send(false)
                 }

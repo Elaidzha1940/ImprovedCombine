@@ -138,15 +138,26 @@ class ImprovedCombineViewModel: ObservableObject {
         
         // Multiple Publisher / Subscribers
         
-            .combineLatest(dataService.boolPublisher)
+            // .combineLatest(dataService.boolPublisher, dataService.intPublisher)
             // .compactMap({ (int, bool) in
             // if bool {
             // return String(int)
             // }
             // return nil
             // })
-            .compactMap({ $1 ? String($0) : "n/a" })
-            //.removeDuplicates()
+            //.compactMap({ $1 ? String($0) : "n/a" })
+            // .compactMap({ (int1, bool, int2) in
+            // if bool {
+            // return String(int1)
+            // } else {
+            // return "n/a"
+            // }
+            // })
+            // .merge(with: dataService.intPublisher)
+            .zip(dataService.boolPublisher, dataService.intPublisher)
+            .map({ tuple in
+                return String(tuple.0) + tuple.1.description + String(tuple.2)
+            })
         
             //.map({ String($0) })
             .sink { completion in
