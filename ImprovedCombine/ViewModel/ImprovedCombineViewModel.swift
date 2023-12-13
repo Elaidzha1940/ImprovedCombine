@@ -19,6 +19,7 @@ class ImprovedCombineViewModel: ObservableObject {
     let dataService = ImprovedCombineDataService()
     
     var cancellables = Set<AnyCancellable>()
+    let multiCastPublisher = PassthroughSubject<Int, Error>()
     
     init() {
         addSubscribers()
@@ -174,10 +175,15 @@ class ImprovedCombineViewModel: ObservableObject {
          
          */
         
-        //
+        // sharedPublisher
+        
         let sharedPublisher = dataService.passThroughpublisher
-            .dropFirst(5)
+            //.dropFirst(5)
             .share()
+        // .multicast {
+        // PassthroughSubject<Int, Error>()
+        // }
+            .multicast(subject: multiCastPublisher)
         
         sharedPublisher
             .map({ String($0) })
@@ -206,6 +212,12 @@ class ImprovedCombineViewModel: ObservableObject {
                 self?.dataBools.append(returnedValue)
             }
             .store(in: &cancellables)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            sharedPublisher
+                .connect()
+                .store(in: &self.cancellables)
+        }
     }
 }
 
