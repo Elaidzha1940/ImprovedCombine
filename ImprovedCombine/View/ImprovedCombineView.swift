@@ -16,13 +16,22 @@ struct ImprovedCombineView: View {
     var body: some View {
         
         ScrollView {
-            VStack {
-                ForEach(vm.data, id: \.self) {
-                    Text($0)
-                        .font(.system(size: 25, weight: .black, design: .rounded))
+            HStack {
+                VStack {
+                    ForEach(vm.data, id: \.self) {
+                        Text($0)
+                            .font(.system(size: 25, weight: .black, design: .rounded))
+                    }
+                    if !vm.error.isEmpty {
+                        Text(vm.error)
+                    }
                 }
-                if !vm.error.isEmpty {
-                    Text(vm.error)
+                
+                VStack {
+                    ForEach(vm.dataBools, id: \.self) {
+                        Text($0.description)
+                            .font(.system(size: 25, weight: .black, design: .rounded))
+                    }
                 }
             }
         }
