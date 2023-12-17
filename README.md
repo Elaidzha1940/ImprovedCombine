@@ -31,3 +31,9 @@ Publisher and subscribers are meant to be connected, and make up the core of Com
 
 <img width="1002" alt="1" src="https://github.com/Elaidzha1940/ImprovedCombine/assets/64445918/53d36d52-8899-401a-ac94-e8f68c09a63f">
 
+You can create chains of these together, for proccessing, reacting, and transforming the data privided by a publisher, and requested by the subscriber
+========================================================================================================================================
+
+<img width="1004" alt="2" src="https://github.com/Elaidzha1940/ImprovedCombine/assets/64445918/15266a5c-d908-49bf-b180-eafdb52fa75d">
+
+
