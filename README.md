@@ -27,7 +27,7 @@ Lifecycle of Publisher and Subscribers:
 <img width="1002" alt="Lifecycle of Publisher and Subscribers" src="https://github.com/Elaidzha1940/ImprovedCombine/assets/64445918/5f46bfb2-2683-41a5-85b9-b86e8df4acc4">
 
 Publisher and subscribers are meant to be connected, and make up the core of Combine
-========================================================================================================================================
+=========================================================================================================================================
 
 <img width="1002" alt="1" src="https://github.com/Elaidzha1940/ImprovedCombine/assets/64445918/53d36d52-8899-401a-ac94-e8f68c09a63f">
 
