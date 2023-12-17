@@ -15,6 +15,13 @@ Using Combine
 
 <img width="1011" alt="About a book" src="https://github.com/Elaidzha1940/ImprovedCombine/assets/64445918/8b980ab5-3b51-4f88-9106-bbc351fdfd11">
 
+
 Publisher and Subscriber:
 
 <img width="1050" alt="Publisher and Subscriber" src="https://github.com/Elaidzha1940/ImprovedCombine/assets/64445918/c6c620eb-76b9-46eb-9db1-ca3e4eb170a6">
+
+
+Lifecycle of Publisher and Subscribers: 
+
+<img width="1002" alt="Lifecycle of Publisher and Subscribers" src="https://github.com/Elaidzha1940/ImprovedCombine/assets/64445918/5f46bfb2-2683-41a5-85b9-b86e8df4acc4">
+
