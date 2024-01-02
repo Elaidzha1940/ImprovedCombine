@@ -13,7 +13,7 @@ https://heckj.github.io/swiftui-notes/
 Using Combine 
 @ Joseph Heck - Version 1.2.2, 2022-05-24
 ========================================================================================================================================
-
+`````````````ruby
 <img width="1011" alt="About a book" src="https://github.com/Elaidzha1940/ImprovedCombine/assets/64445918/8b980ab5-3b51-4f88-9106-bbc351fdfd11">
 
 Publisher and Subscriber:
@@ -41,3 +41,4 @@ A simple Combine pipeline written in swift might look like:
 
 <img width="1019" alt="pipeline" src="https://github.com/Elaidzha1940/ImprovedCombine/assets/64445918/953521be-d3f8-4f8e-a6f1-b9e32f2dbbc9">
 
+`````````````
